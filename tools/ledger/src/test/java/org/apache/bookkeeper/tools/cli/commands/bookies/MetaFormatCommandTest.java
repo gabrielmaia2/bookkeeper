@@ -32,13 +32,11 @@ import org.mockito.MockedStatic;
  * Unit test for {@link MetaFormatCommand}.
  */
 public class MetaFormatCommandTest extends BookieCommandTestBase {
-
-    public MetaFormatCommandTest() {
-        super(3, 0);
-    }
-
     @Override
     public void setup() throws Exception {
+        numJournalDirs = 3;
+        numLedgerDirs = 0;
+
         super.setup();
 
         final MockedStatic<BookKeeperAdmin> bookKeeperAdminMockedStatic = mockStatic(BookKeeperAdmin.class);

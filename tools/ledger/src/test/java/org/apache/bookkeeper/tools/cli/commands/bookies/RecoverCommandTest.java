@@ -65,13 +65,13 @@ public class RecoverCommandTest extends BookieCommandTestBase {
     private RegistrationManager registrationManager;
     private Versioned<Cookie> cookieVersioned;
 
-    public RecoverCommandTest() {
-        super(3, 0);
-    }
-
     @Override
     public void setup() throws Exception {
+        numJournalDirs = 3;
+        numLedgerDirs = 0;
+
         super.setup();
+        
         mockServerConfigurationConstruction();
         mockClientConfigurationConstruction();
         ledgerMetadata = mock(LedgerMetadata.class);

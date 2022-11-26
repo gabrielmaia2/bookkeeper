@@ -32,13 +32,11 @@ import org.junit.Test;
  * Unit test for {@link NukeExistingClusterCommand}.
  */
 public class NukeExistingClusterCommandTest extends BookieCommandTestBase {
-
-    public NukeExistingClusterCommandTest() {
-        super(3, 0);
-    }
-
     @Override
     public void setup() throws Exception {
+        numJournalDirs = 3;
+        numLedgerDirs = 0;
+
         super.setup();
 
     }

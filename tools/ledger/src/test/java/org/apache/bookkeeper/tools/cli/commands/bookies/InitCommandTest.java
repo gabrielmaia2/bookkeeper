@@ -31,13 +31,11 @@ import org.mockito.MockedStatic;
  * Unit test for {@link InitCommand}.
  */
 public class InitCommandTest extends BookieCommandTestBase {
-
-    public InitCommandTest() {
-        super(3, 0);
-    }
-
     @Override
     public void setup() throws Exception {
+        numJournalDirs = 3;
+        numLedgerDirs = 0;
+
         super.setup();
 
         mockServerConfigurationConstruction();

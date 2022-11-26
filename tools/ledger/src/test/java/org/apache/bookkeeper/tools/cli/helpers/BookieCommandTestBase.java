@@ -26,9 +26,12 @@ import org.junit.Before;
  */
 public abstract class BookieCommandTestBase extends CommandTestBase {
 
-    protected final int numJournalDirs;
-    protected final int numLedgerDirs;
+    protected int numJournalDirs;
+    protected int numLedgerDirs;
 
+    protected BookieCommandTestBase() {
+    }
+    
     protected BookieCommandTestBase(int numJournalDirs, int numLedgerDirs) {
         this.numJournalDirs = numJournalDirs;
         this.numLedgerDirs = numLedgerDirs;

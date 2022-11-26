@@ -30,13 +30,11 @@ import org.junit.Test;
  * Unit test for {@link InstanceIdCommand}.
  */
 public class InstanceIdCommandTest extends BookieCommandTestBase {
-
-    public InstanceIdCommandTest() {
-        super(3, 0);
-    }
-
     @Override
     public void setup() throws Exception {
+        numJournalDirs = 3;
+        numLedgerDirs = 0;
+
         super.setup();
 
         final RegistrationManager manager = mock(RegistrationManager.class);
